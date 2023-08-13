@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ChaiZhuangTimeMapper">
+    <select id="selectAll" parameterType="java.lang.String" resultType="com.example.demo.entry.ChaiZhuangTime">
+        select * from chaizhuangtime where 1=1 and zbname=#{zhuangbeiname}
+    </select>
+    <select id="selectObjectByName" parameterType="com.example.demo.entry.ChaiZhuangTime"
+            resultType="com.example.demo.entry.ChaiZhuangTime">
+        select * from chaizhuangtime where 1=1 and zbname=#{zbname} and ljname=#{ljname}
+    </select>
+    <insert id="save" parameterType="com.example.demo.entry.ChaiZhuangTime">
+        insert into chaizhuangtime values(null ,#{zbname},#{ljname},#{chaitime},#{zhuangtime})
+    </insert>
+    <update id="update" parameterType="com.example.demo.entry.ChaiZhuangTime">
+        update chaizhuangtime set ljname=#{ljname},chaitime=#{chaitime},zhuangtime=#{zhuangtime} where id=#{id}
+    </update>
+    <update id="updateAllByZbName" parameterType="com.example.demo.entry.ChaiZhuangTime">
+        update chaizhuangtime set zbname=#{zbname} where id=#{id}
+    </update>
+    <delete id="delete" parameterType="com.example.demo.entry.ChaiZhuangTime">
+        delete from chaizhuangtime where zbname=#{zbname} and ljname=#{ljname}
+    </delete>
+    <delete id="deleteAllByZbName" parameterType="com.example.demo.entry.ChaiZhuangTime">
+        delete from chaizhuangtime where zbname=#{zbname}
+    </delete>
+</mapper>

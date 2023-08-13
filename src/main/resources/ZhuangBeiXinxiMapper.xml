@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZhuangBeiXinxiMapper">
+    <select id="selectAll" resultType="com.example.demo.entry.ZhuangBeiXinxi">
+        select * from zhuangbeixinxi
+    </select>
+    <select id="selectObjectByName" parameterType="java.lang.String" resultType="com.example.demo.entry.ZhuangBeiXinxi">
+        select * from zhuangbeixinxi where 1=1 and diyname=#{newValue}
+    </select>
+    <insert id="save" parameterType="com.example.demo.entry.ZhuangBeiXinxi">
+        insert into zhuangbeixinxi values(null ,#{diyname},#{sumlingjian},#{shunxuhz})
+    </insert>
+    <update id="update" parameterType="com.example.demo.entry.ZhuangBeiXinxi">
+        update zhuangbeixinxi set diyname=#{diyname},sumlingjian=#{sumlingjian},shunxuhz=#{shunxuhz} where id=#{id}
+    </update>
+    <delete id="delete" parameterType="com.example.demo.entry.ZhuangBeiXinxi">
+        delete from zhuangbeixinxi where diyname=#{diyname}
+    </delete>
+</mapper>

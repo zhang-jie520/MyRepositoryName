@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane id="mainBorderPane" minHeight="300.0" minWidth="400.0" stylesheets="/css/PrimaryStage.css"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controller.Data31StageController">
+    <bottom>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="106.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="141.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="113.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="307.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="301.0" minHeight="7.0" prefHeight="29.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="7.0" prefHeight="28.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="300.0" minHeight="7.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="可接受值："/>
+                <Label text="百分位要求：" GridPane.rowIndex="1"/>
+                <Label text="订购方风险：" GridPane.rowIndex="2"/>
+
+                <TextField fx:id="X" text="0.5" GridPane.columnIndex="1"/>
+                <TextField fx:id="mpt" text="95" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="bField" text="0.1" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="相关参数(时间)" GridPane.columnIndex="2"/>
+                <Label text="相关参数(95)" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Label text="相关参数(0.1/0.25)" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+                <Label text="样本量：" GridPane.rowIndex="3"/>
+                <TextField fx:id="jsFieldn" text="50" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="相关参数(50)" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+                <Label text="维修试验数据(min)" GridPane.rowIndex="4"/>
+                <TextField fx:id="addField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Button fx:id="pjBt1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                        onAction="#addButtonClick" text="添加" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+                <ListView fx:id="sumList" prefHeight="200" prefWidth="200" GridPane.rowIndex="5">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                        </FXCollections>
+                    </items>
+                </ListView>
+                <TextField fx:id="deleteField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <Button fx:id="pjBt2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                        onAction="#deleteButtonClick" text="删除" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+                <Label text="接收数：" GridPane.rowIndex="6"/>
+                <TextField fx:id="jsFieldc" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <Button fx:id="jsBt1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                        onAction="#jscButtonClick" text="计算接收数" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+                <Button fx:id="pjBt" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                        onAction="#pjButtonClick" text="评价" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+                <Label text="标准值：" GridPane.rowIndex="7"/>
+                <TextField fx:id="bzField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                <Label text="试验值：" GridPane.rowIndex="8"/>
+                <TextField fx:id="syField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <Label text="评价结果：" GridPane.rowIndex="9"/>
+                <TextField fx:id="pjField" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+                <Button fx:id="pjBt3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                        onAction="#backButtonClick" text="返回" GridPane.columnIndex="2" GridPane.rowIndex="9"/>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </GridPane>
+    </bottom>
+</BorderPane>
